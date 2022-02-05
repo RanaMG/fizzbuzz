@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    
+    <h1 id="head"></h1>
+    <p>Type a Number: </p>
+    <input type="number" id="nilai">
+    <input type="submit" id="kirim" value="Click here!"><hr>
+    <div id="fizzbuzz"></div>
+    <script>
+        document.getElementById("head").innerHTML="Get a FizzBuzz Result!";
+        const send = document.getElementById("kirim");
+        send.addEventListener('click', function(){
+            let a = document.getElementById("nilai").value;
+            console.log(a);
+            function result(a){
+                    if (a>0  && a % 3 === 0 && a % 5 === 0) {
+                        return "FizzBuzz";
+                    } else if ( a>0 && a % 5 === 0) {
+                        return "Buzz";
+                    } else if (a>0 && a % 3 === 0) {
+                        return "Fizz";
+                    } else if (a>0 && a % 3 !== 0 && a % 5 !== 0) {
+                        return a;
+                    } else {
+                        return "Invalid Input!";
+                    }          
+            }
+        const fizzbuzz = document.getElementById('fizzbuzz');
+        const fb= document.createElement('p');
+        fb.innerHTML=result(a);
+        fizzbuzz.append(fb);
+        });
+    </script>
+</body>
+</html>
